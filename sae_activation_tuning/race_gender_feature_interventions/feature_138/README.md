@@ -63,6 +63,8 @@ Means across six seeds. Pixel MAE compares with that seed's original (`alpha +1`
 
 The negative alpha values drive the re-encoded feature activation to zero in these prompts. That does not mean the generated visual attribute disappears: pixel MAE measures total image change, and the seed sheets should be checked for the scarf itself. The new signed maps expose the direction and size of the scaled latent coefficient. See [`run_002`](run_002/) for per-seed sheets, signed overlays, activation overlays, metrics, and maps.
 
+## Run 001: previous alpha sweep (preserved)
+
 Feature 138 ranked highly for Middle Eastern women in the biased race/gender dataset. A previous intervention at strengths 0–2 did not cleanly remove a headscarf in one image; the earlier prompt had not explicitly forbidden a head covering. This run asks a more specific question: **does scaling feature 138 make a headscarf appear or disappear in matched neutral portraits?**
 
 ## Setup
