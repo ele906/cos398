@@ -14,6 +14,8 @@ See the [full report, metrics, activation maps, and 4×5 per-seed image and `jet
 
 ![Post-intervention jet activation overlays for the same seed](sae_activation_tuning/facial_hair_dose_response/run_001/seed_jet_overlay_sheets/bearded_candidate_beard_2893_seed7000.jpg)
 
+The first feature-level follow-up is [feature 138](sae_activation_tuning/race_gender_feature_interventions/feature_138/README.md), tested with explicit headscarf-present and headscarf-absent prompts. It includes post-activation overlays and separate intervention-footprint overlays, since suppression can make post-activation maps zero.
+
 ## Main findings
 
 ### SAE activations vary across prompt groups

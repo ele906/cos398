@@ -1,0 +1,52 @@
+{
+  "feature": 138,
+  "feature_source": "Largest race/gender group differences in the biased dataset; peak group is Middle Eastern women.",
+  "prior_specific_evidence": "A prior strength-0..2 intervention did not cleanly remove a headscarf in one Middle Eastern woman seed; the earlier prompt did not explicitly prohibit head coverings.",
+  "hypothesis": "Does scaling feature 138 change whether a headscarf appears in a matched neutral portrait?",
+  "multipliers_alpha": [
+    -100,
+    -75,
+    -50,
+    -25,
+    -10,
+    -5,
+    -3,
+    -2,
+    -1,
+    0,
+    1,
+    2,
+    3,
+    5,
+    10,
+    25,
+    50,
+    75,
+    100
+  ],
+  "seeds": [
+    7000,
+    7001,
+    7002,
+    7003,
+    7004,
+    7005
+  ],
+  "conditions": {
+    "no_headscarf": "with dark hair fully visible and no head covering",
+    "headscarf": "wearing a plain dark navy hijab that covers her hair"
+  },
+  "prompt_template": "a studio portrait photo of a Middle Eastern woman {covering}, neutral expression, wearing a plain white T-shirt against a plain white background",
+  "block": "unet.down_blocks.2.attentions.1",
+  "checkpoint": "pretrained SAE checkpoint for unet.down_blocks.2.attentions.1",
+  "model": "stabilityai/sdxl-turbo",
+  "steps": 1,
+  "guidance_scale": 0.0,
+  "intervention": "block output plus (alpha - 1) times the original SAE feature coefficient times its decoder direction; reconstruction error is preserved; alpha +1 is the exact no-op.",
+  "post_activation": "SAE re-encoding of the intervened block residual (edited output minus block input), captured inside the feature hook before the next layer.",
+  "heatmaps": "jet palette, shared p99.5 scale per condition; post-activation maps and absolute coefficient-change footprint maps are saved separately.",
+  "heatmap_vmax_99p5": {
+    "no_headscarf": 2200.928583984375,
+    "headscarf": 5120.997431640625
+  }
+}
