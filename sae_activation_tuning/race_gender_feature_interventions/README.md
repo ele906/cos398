@@ -4,6 +4,6 @@ One folder per feature from the biased dataset's race/gender disparity report. E
 
 ## Completed
 
-- [Feature 138](feature_138/README.md) — Middle Eastern women was the peak group in the one-vs-many scan. This first run tests whether scaling the feature changes a headscarf in matched neutral portraits.
+- [Feature 138](feature_138/README.md) — Middle Eastern women was the peak group in the one-vs-many scan. The current `run_002` tests 19 ascending alpha values on matched neutral portraits and includes signed coefficient overlays.
 
 The remaining features will be added one at a time. These feature/group associations are descriptive and do not establish feature meaning or harmful bias.
