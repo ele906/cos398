@@ -4,7 +4,7 @@
 
 This is the current sweep. It keeps the two prompt conditions and six paired seeds, with the revised alpha set `-100, -80, -60, -50, -40, -30, -20, -10, -5, 0, 5, 10, 20, 30, 40, 50, 60, 80, 100`. Each 4×5 sheet starts with the original (`alpha +1`) image, followed by the 19 intervention images in ascending alpha order. The earlier sweep remains preserved under [`run_001`](run_001/).
 
-The signed coefficient overlays use transparent zero, green near zero, purple for the strongest negative values, and green-to-yellow-to-red for positive values (red is strongest). The post-re-encoded SAE activation itself cannot be negative, so the signed overlay visualizes the scaled coefficient used by the intervention. Graphs use the same sign-aware colors.
+The signed coefficient overlays use transparent zero, green near zero through blue to purple for stronger negative values, and yellow near zero through orange to red for stronger positive values. Overlay opacity scales with magnitude and stays translucent so the portrait remains visible. The post-re-encoded SAE activation itself cannot be negative, so the signed overlay visualizes the scaled coefficient used by the intervention. Graphs use the same sign-aware colors.
 
 | Prompt condition | Summary graph | Images | Signed coefficient overlay |
 |---|---|---|---|

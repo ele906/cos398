@@ -44,7 +44,7 @@
   "guidance_scale": 0.0,
   "intervention": "block output plus (alpha - 1) times the original SAE feature coefficient times its decoder direction; reconstruction error is preserved; alpha +1 is the exact no-op.",
   "post_activation": "SAE re-encoding of the intervened block residual (edited output minus block input), captured inside the feature hook before the next layer.",
-  "heatmaps": "Signed scaled SAE feature coefficients: zero transparent; near-zero green, strongest negatives purple, positive values transition green to yellow to red. Post-re-encoded SAE activations remain nonnegative.",
+  "heatmaps": "Signed scaled SAE feature coefficients: exact zero transparent; negative values transition green near zero through blue to purple at high magnitude; positive values transition yellow near zero through orange to red at high magnitude. Overlay opacity scales with magnitude and remains translucent. Post-re-encoded SAE activations remain nonnegative.",
   "heatmap_vmax_99p5": {
     "no_headscarf": 2200.928583984375,
     "headscarf": 5120.997431640625

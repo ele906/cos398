@@ -19,7 +19,7 @@ def slug(value):
 
 
 def signed_rgb(values, negative_limit, positive_limit):
-    """Negative: green to purple; positive: green to yellow to red."""
+    """Negative: green to blue to purple; positive: yellow to orange to red."""
     x = np.asarray(values, dtype=np.float32)
     magnitude = np.zeros(x.shape, dtype=np.float32)
     rgb = np.zeros((*x.shape, 3), dtype=np.float32)
@@ -27,16 +27,20 @@ def signed_rgb(values, negative_limit, positive_limit):
     pos = x > 0
     magnitude[neg] = np.clip(-x[neg] / max(negative_limit, 1e-8), 0, 1)
     magnitude[pos] = np.clip(x[pos] / max(positive_limit, 1e-8), 0, 1)
-    # Near-zero values are green on both sides; strongest negative values are purple.
+    # Negative values move from green near zero to purple at high magnitude.
     green = np.array([0.05, 0.72, 0.18], dtype=np.float32)
+    blue = np.array([0.08, 0.28, 0.92], dtype=np.float32)
     purple = np.array([0.63, 0.05, 0.78], dtype=np.float32)
-    yellow = np.array([1.0, 0.93, 0.0], dtype=np.float32)
+    yellow = np.array([1.0, 0.95, 0.05], dtype=np.float32)
+    orange = np.array([1.0, 0.42, 0.0], dtype=np.float32)
     red = np.array([0.95, 0.0, 0.02], dtype=np.float32)
     t = magnitude[..., None]
-    neg_rgb = green * (1 - t) + purple * t
-    pos_rgb = np.where(t <= 0.6,
-                       green + (yellow - green) * (t / 0.6),
-                       yellow + (red - yellow) * ((t - 0.6) / 0.4))
+    neg_rgb = np.where(t <= 0.55,
+                       green + (blue - green) * (t / 0.55),
+                       blue + (purple - blue) * ((t - 0.55) / 0.45))
+    pos_rgb = np.where(t <= 0.5,
+                       yellow + (orange - yellow) * (t / 0.5),
+                       orange + (red - orange) * ((t - 0.5) / 0.5))
     rgb[neg] = neg_rgb[neg]
     rgb[pos] = pos_rgb[pos]
     return (rgb * 255).astype(np.uint8), magnitude
@@ -45,7 +49,9 @@ def signed_rgb(values, negative_limit, positive_limit):
 def save_overlay(image_path, values, neg_limit, pos_limit, output_path):
     base = Image.open(image_path).convert("RGB")
     colors, magnitude = signed_rgb(values, neg_limit, pos_limit)
-    alpha = np.where(magnitude > 0, np.clip(48 + magnitude * 120, 0, 168), 0).astype(np.uint8)
+    # Scale opacity with magnitude: exact zero is invisible and strong values
+    # remain translucent enough to see the portrait beneath the heatmap.
+    alpha = np.clip(magnitude * 128, 0, 128).astype(np.uint8)
     layer = np.dstack((colors, alpha))
     heat = Image.fromarray(layer, "RGBA").resize(base.size, Image.Resampling.NEAREST)
     Image.alpha_composite(base.convert("RGBA"), heat).convert("RGB").save(output_path, quality=93, optimize=True)
@@ -153,7 +159,7 @@ def main():
             ("pixel_mae_vs_original", "Mean RGB pixel MAE vs. original (alpha +1)"),
         ]
         pos_cols, _ = signed_rgb(np.asarray([1.0]), neg_limit, pos_limit)
-        # Magnitude bars use the positive side of the same green-yellow-red scale.
+        # Magnitude bars use the positive yellow-to-red scale.
         for axis, (key, title) in zip(axes[1:], specs):
             values = np.asarray([r[key] for r in means])
             denom = max(float(values.max()), 1e-8)
@@ -164,15 +170,16 @@ def main():
             ax.set_xticks(x, [f"{a:+g}" for a in FACTORS], rotation=45, ha="right")
             ax.grid(axis="y", alpha=0.25)
             ax.set_axisbelow(True)
-        fig.suptitle(f"Feature 138 — {condition.replace('_', ' ').title()}\nSigned colors: negative purple to green near zero; positive green-yellow-red; zero transparent in image overlays")
+        fig.suptitle(f"Feature 138 — {condition.replace('_', ' ').title()}\nNegative: green to blue to purple; positive: yellow to orange to red; zero transparent; translucent overlays")
         fig.savefig(RUN / "activation_graphs" / f"{condition}.png", dpi=170, bbox_inches="tight")
         plt.close(fig)
 
     settings_path = RUN / "settings.json"
     import json
     settings = json.loads(settings_path.read_text())
-    settings["heatmaps"] = ("Signed scaled SAE feature coefficients: zero transparent; near-zero green, strongest negatives purple, "
-                            "positive values transition green to yellow to red. Post-re-encoded SAE activations remain nonnegative.")
+    settings["heatmaps"] = ("Signed scaled SAE feature coefficients: exact zero transparent; negative values transition green near zero through blue to purple at high magnitude; "
+                            "positive values transition yellow near zero through orange to red at high magnitude. Overlay opacity scales with magnitude and remains translucent. "
+                            "Post-re-encoded SAE activations remain nonnegative.")
     settings["signed_heatmap_scale"] = {"negative_abs_p99_5": neg_limit, "positive_p99_5": pos_limit}
     settings_path.write_text(json.dumps(settings, indent=2) + "\n")
     print(f"Rendered signed overlays; negative p99.5={neg_limit:.4f}, positive p99.5={pos_limit:.4f}")
