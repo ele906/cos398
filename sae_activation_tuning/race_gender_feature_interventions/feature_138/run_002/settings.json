@@ -54,5 +54,6 @@
   "signed_heatmap_scale": {
     "negative_abs_p99_5": 5204.376945800791,
     "positive_p99_5": 5204.376945800791
-  }
+  },
+  "overlay_visibility": "Each heatmap tile uses its own 99.5th percentile color scale for visibility. Original tiles show pre-intervention activations. Alpha zero tiles show the pre-intervention map over the edited image to mark the suppressed feature location; the actual post-re-encoded activation at alpha zero is zero."
 }

@@ -49,12 +49,21 @@ def signed_rgb(values, negative_limit, positive_limit):
 def save_overlay(image_path, values, neg_limit, pos_limit, output_path):
     base = Image.open(image_path).convert("RGB")
     colors, magnitude = signed_rgb(values, neg_limit, pos_limit)
-    # Scale opacity with magnitude: exact zero is invisible and strong values
-    # remain translucent enough to see the portrait beneath the heatmap.
-    alpha = np.clip(magnitude * 128, 0, 128).astype(np.uint8)
+    # Use a gentle nonlinear ramp to make moderate values easier to see while
+    # preserving transparency at zero and leaving the source image visible.
+    alpha = np.clip(np.power(magnitude, 0.65) * 210, 0, 210).astype(np.uint8)
     layer = np.dstack((colors, alpha))
     heat = Image.fromarray(layer, "RGBA").resize(base.size, Image.Resampling.NEAREST)
     Image.alpha_composite(base.convert("RGBA"), heat).convert("RGB").save(output_path, quality=93, optimize=True)
+
+
+def limits_for(values):
+    values = np.asarray(values, dtype=np.float32)
+    finite = values[np.isfinite(values)]
+    negative = np.abs(finite[finite < 0])
+    positive = finite[finite > 0]
+    return (max(float(np.percentile(negative, 99.5)) if negative.size else 0, 1e-6),
+            max(float(np.percentile(positive, 99.5)) if positive.size else 0, 1e-6))
 
 
 def main():
@@ -78,11 +87,15 @@ def main():
             overlay_maps = [maps["pre_maps"][map_index]]
             for alpha_index, alpha in enumerate(FACTORS):
                 image_paths.append(RUN / "images" / condition / f"seed{seed}_alpha_{slug(alpha)}.jpg")
-                overlay_maps.append(signed[map_index, alpha_index])
+                # Alpha zero removes the coefficient. Show its saved baseline map
+                # on that edited image so the suppressed feature location is visible.
+                overlay_maps.append(maps["pre_maps"][map_index] if alpha == 0
+                                    else signed[map_index, alpha_index])
             tiles = []
             for idx, (image_path, values) in enumerate(zip(image_paths, overlay_maps)):
                 temp = out_dir / f".tile_{condition}_{seed}_{idx}.jpg"
-                save_overlay(image_path, values, neg_limit, pos_limit, temp)
+                tile_neg_limit, tile_pos_limit = limits_for(values)
+                save_overlay(image_path, values, tile_neg_limit, tile_pos_limit, temp)
                 tiles.append(("original" if idx == 0 else f"alpha {FACTORS[idx - 1]:+g}", temp))
             cell, top = 256, 24
             sheet = Image.new("RGB", (5 * cell, 4 * (cell + top)), "white")
@@ -97,25 +110,28 @@ def main():
                 tile_path.unlink()
             sheet.save(out_dir / f"{condition}_seed{seed}.jpg", quality=93, optimize=True)
 
-            # Re-render the two nonnegative heatmap grids with the same positive
-            # green-to-yellow-to-red ramp and exact-zero transparency.
+            # Normalize maps per tile so the original and near-zero scales remain
+            # legible alongside large alpha values. Alpha zero uses the baseline
+            # map to mark the feature location that was suppressed.
             for folder, array_key in (
                 ("post_activation_overlays", "post_reencoded_maps"),
                 ("intervention_footprint_overlays", "intervention_footprint_maps"),
             ):
                 array = maps[array_key]
-                values_all = array[np.isfinite(array)]
-                vmax = max(float(np.percentile(values_all, 99.5)), 1e-6)
                 nonnegative_dir = RUN / folder
                 nonnegative_dir.mkdir(exist_ok=True)
                 tiles = []
                 original_values = maps["pre_maps"][map_index]
                 temp = nonnegative_dir / f".tile_{condition}_{seed}_original.jpg"
+                _, vmax = limits_for(original_values)
                 save_overlay(image_paths[0], original_values, vmax, vmax, temp)
                 tiles.append(("original", temp))
                 for alpha_index, alpha in enumerate(FACTORS):
                     temp = nonnegative_dir / f".tile_{condition}_{seed}_{alpha_index}.jpg"
-                    save_overlay(image_paths[alpha_index + 1], array[map_index, alpha_index], vmax, vmax, temp)
+                    values = (original_values if alpha == 0 and array_key == "post_reencoded_maps"
+                              else array[map_index, alpha_index])
+                    _, tile_vmax = limits_for(values)
+                    save_overlay(image_paths[alpha_index + 1], values, tile_vmax, tile_vmax, temp)
                     tiles.append((f"alpha {alpha:+g}", temp))
                 sheet = Image.new("RGB", (5 * cell, 4 * (cell + top)), "white")
                 draw = ImageDraw.Draw(sheet)
@@ -151,7 +167,7 @@ def main():
         color_values, mags = signed_rgb(signed_values, neg_limit, pos_limit)
         axes[0].bar(x, signed_values, color=color_values / 255.0, edgecolor="white", linewidth=0.5)
         axes[0].axhline(0, color="black", linewidth=0.8)
-        axes[0].set_title("Mean signed scaled feature coefficient (green near zero; purple negative; yellow to red positive)")
+        axes[0].set_title("Mean signed scaled coefficient (negative: green-blue-purple; positive: yellow-orange-red)")
         specs = [
             ("mean_abs_scaled_coefficient", "Mean absolute scaled coefficient"),
             ("mean_abs_intervention_coefficient_change", "Mean absolute coefficient change applied"),
@@ -181,6 +197,9 @@ def main():
                             "positive values transition yellow near zero through orange to red at high magnitude. Overlay opacity scales with magnitude and remains translucent. "
                             "Post-re-encoded SAE activations remain nonnegative.")
     settings["signed_heatmap_scale"] = {"negative_abs_p99_5": neg_limit, "positive_p99_5": pos_limit}
+    settings["overlay_visibility"] = ("Each heatmap tile uses its own 99.5th percentile color scale for visibility. Original tiles show pre-intervention activations. "
+                                      "Alpha zero tiles show the pre-intervention map over the edited image to mark the suppressed feature location; "
+                                      "the actual post-re-encoded activation at alpha zero is zero.")
     settings_path.write_text(json.dumps(settings, indent=2) + "\n")
     print(f"Rendered signed overlays; negative p99.5={neg_limit:.4f}, positive p99.5={pos_limit:.4f}")
 
