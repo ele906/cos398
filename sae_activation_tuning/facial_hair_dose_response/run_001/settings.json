@@ -1,0 +1,48 @@
+{
+  "feature_candidate": 2893,
+  "candidate_evidence": "Beard candidate; prior validation AUC 0.562 and controlled spatial enrichment 3.228, with unreviewed detector labels.",
+  "control_feature": 4544,
+  "control_selection": "Activity-matched to feature 2893 on the open-prompt East Asian man cohort (mean spatial-max 23.63 vs 23.91; active in 100% of images for each). Previously used as a random control in another exploratory study; not guaranteed semantically neutral.",
+  "multipliers": [
+    -100,
+    -75,
+    -50,
+    -25,
+    -10,
+    -5,
+    -3,
+    -2,
+    -1,
+    0,
+    1,
+    2,
+    3,
+    5,
+    10,
+    25,
+    50,
+    75,
+    100
+  ],
+  "seed_pairs": [
+    7000,
+    7001,
+    7002,
+    7003,
+    7004,
+    7005
+  ],
+  "conditions": {
+    "clean_shaven": "no beard or moustache; clean-shaven",
+    "bearded": "a clearly visible full beard and moustache"
+  },
+  "prompt_template": "a studio portrait photo of an East Asian man with short hair and {facial_hair}, neutral expression, wearing a plain white T-shirt against a plain white background",
+  "block": "unet.down_blocks.2.attentions.1",
+  "checkpoint": "unet.down_blocks.2.attentions.1_k10_hidden5120_auxk256_bs4096_lr0.0001/final (local checkpoint; not included)",
+  "model": "stabilityai/sdxl-turbo",
+  "steps": 1,
+  "guidance_scale": 0.0,
+  "output_intervention": "block output plus (multiplier - 1) times the original SAE feature coefficient times its decoder direction; reconstruction error is preserved; multiplier 1 is the exact no-op.",
+  "post_activation_map": "SAE re-encoding of the intervened block residual (edited output minus block input), captured inside the feature hook before the next layer.",
+  "labels": "Visual review is required; the supplied prompts are conditions, not verified beard labels."
+}

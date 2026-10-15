@@ -2,6 +2,18 @@
 
 This is a curated set of results from projects in `/n/fs/goose`, including SAE activation analysis, feature interventions, concept localization, detector evaluation, and image-generation composition checks. It contains selected figures and summary tables, not the full debiasing checkout, raw image datasets, model weights, or run dumps.
 
+## Recent experiment
+
+### Large feature multipliers did not isolate facial hair
+
+A matched-seed SDXL Turbo sweep tested candidate beard feature 2893 and activity-matched control 4544 at alpha values from -100 to +100, with clean-shaven and bearded portrait prompts. In the inspected examples, +5 and +10 did not consistently add facial hair; stronger settings changed other facial details, and extreme values often caused obvious distortions. Feature 2893 was a weak beard candidate before intervention (AUC 0.562), so this remains exploratory evidence rather than a reliable facial-hair control.
+
+See the [full report, metrics, activation maps, and 4×5 per-seed image and `jet` overlay sheets](sae_activation_tuning/facial_hair_dose_response/README.md).
+
+![Bearded prompt, candidate feature 2893, seed 7000 across alpha values](sae_activation_tuning/facial_hair_dose_response/run_001/seed_sheets/bearded_candidate_beard_2893_seed7000.jpg)
+
+![Post-intervention jet activation overlays for the same seed](sae_activation_tuning/facial_hair_dose_response/run_001/seed_jet_overlay_sheets/bearded_candidate_beard_2893_seed7000.jpg)
+
 ## Main findings
 
 ### SAE activations vary across prompt groups
@@ -69,5 +81,6 @@ Across these experiments, activation association, spatial localization, image in
 ## Included files
 
 - [`sae_group_activations/`](sae_group_activations/README.md): full biased-set one-vs-many and many-vs-many tables and charts.
+- [`sae_activation_tuning/facial_hair_dose_response/`](sae_activation_tuning/facial_hair_dose_response/README.md): candidate beard-feature multiplier sweep, per-seed sheets, overlays, graphs, and saved metrics/maps.
 - [`figures/`](figures/): representative charts and intervention/localization comparisons.
 - [`evidence/`](evidence/): selected association/intervention CSVs and detailed source summaries.

@@ -1,0 +1,1 @@
+Each 4x5 sheet starts with the original image, followed by the 19 alpha values in the order recorded in settings.json. Matching jet overlay sheets use the pre-intervention map on the original and post-re-encoded maps on edited images. For each condition, feature, and seed, the overlay color ceiling is the 99.5th percentile across its saved maps.
