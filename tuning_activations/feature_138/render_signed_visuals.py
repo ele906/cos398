@@ -118,7 +118,21 @@ def main():
                 tile_neg_limit, tile_pos_limit = limits_for(values)
                 save_overlay(image_path, values, tile_neg_limit, tile_pos_limit, temp)
                 tiles.append(("original" if idx == 0 else f"alpha {FACTORS[idx - 1]:+g}", temp))
-            cell, top = 256, 24
+            cell, top = 384, 30
+            plain_dir = RUN / "seed_sheets"
+            plain_dir.mkdir(exist_ok=True)
+            plain_sheet = Image.new("RGB", (5 * cell, 4 * (cell + top)), "white")
+            plain_draw = ImageDraw.Draw(plain_sheet)
+            for i, (image_path, label) in enumerate(zip(image_paths,
+                    ["original"] + [f"alpha {a:+g}" for a in FACTORS])):
+                row, col = divmod(i, 5)
+                x, y = col * cell, row * (cell + top)
+                plain_draw.text((x + 6, y + 5), label, fill="black")
+                tile = Image.open(image_path).convert("RGB")
+                tile.thumbnail((cell - 10, cell - top - 8))
+                plain_sheet.paste(tile, (x + (cell - tile.width) // 2, y + top))
+            plain_sheet.save(plain_dir / f"{condition}_seed{seed}.jpg", quality=93, optimize=True)
+
             sheet = Image.new("RGB", (5 * cell, 4 * (cell + top)), "white")
             draw = ImageDraw.Draw(sheet)
             for i, (label, tile_path) in enumerate(tiles):
