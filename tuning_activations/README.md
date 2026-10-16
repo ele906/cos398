@@ -8,4 +8,8 @@ The first run uses the 100 Middle Eastern women images because feature 138 had i
 
 The earlier scarf/no-scarf prompt experiment remains in `../race_gender_feature_interventions/feature_138/` as a separate prompt-controlled exploration. It is not used for the biased-dataset results here.
 
+## Feature 3884
+
+The follow-up run covers all 12 biased race/gender groups, with 20 original seeds per group. The symmetric alpha set is `-75, -50, -30, -20, -15, -10, -7, -5, -3, 0, 3, 5, 7, 10, 15, 20, 30, 50, 75`. Browse the results in [feature 3884](feature_3884/README.md), organized by group with a 5×4 grid per seed.
+
 The runnable notebook and reusable scripts are also included in the public [cos398 `tuning_activations` folder](https://github.com/ele906/cos398/tree/main/tuning_activations) and the [SAE demo notebook repository](https://github.com/ele906/sae-demo-notebooks/tree/main/sae-activation/activation_tuning).

@@ -6,6 +6,8 @@ This is a curated set of results from projects in `/n/fs/goose`, including SAE a
 
 The feature intervention work on the original biased race/gender dataset is collected under [`tuning_activations/`](tuning_activations/). See the [feature 138 report](tuning_activations/feature_138/README.md): it replays the original prompts and seeds for the Middle Eastern women group across 19 alpha values. The earlier hand-prompted scarf/no-scarf exploration remains in [`sae_activation_tuning/race_gender_feature_interventions/`](sae_activation_tuning/race_gender_feature_interventions/) as a separate archive.
 
+The next run tests [feature 3884](tuning_activations/feature_3884/README.md) across all 12 biased race/gender groups, with 20 seeds per group. Its report includes a per-group mean pixel-change and activation table for each alpha, plus all per-seed 5×4 image and overlay grids.
+
 ## Recent experiment
 
 ### Large feature multipliers did not isolate facial hair
