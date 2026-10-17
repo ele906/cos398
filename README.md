@@ -30,6 +30,8 @@ The biased/open-prompt dataset has large differences across the 12 race-and-gend
 
 The full one-vs-many and predefined many-vs-many comparisons, with 12-bar charts, are in [SAE group activation results](sae_group_activations/README.md).
 
+For an interactive browser view of these activation patterns and the saved feature 3884 alpha sweep, see the [SAE Explorer](https://ele906.github.io/sae-demo-notebooks/) or its [source](https://github.com/ele906/sae-demo-notebooks/tree/main/demo). The slider selects precomputed results; it does not generate new images.
+
 ### Prompt associations did not translate into clean attribute controls
 
 The baseline SAE audit found prompt-group associations that repeated on a held-out split. For example, feature 527's Black-prompt contrast was 2.44 in discovery and 2.28 in held-out data; feature 3530's Middle-Eastern-prompt contrast was 2.44 and 2.65. These are standardized activation contrasts, not bias scores.
