@@ -21,3 +21,22 @@ The earlier scarf/no-scarf prompt experiment remains in `../race_gender_feature_
 The follow-up run covers all 12 biased race/gender groups, with 20 original seeds per group. The symmetric alpha set is `-75, -50, -30, -20, -15, -10, -7, -5, -3, 0, 3, 5, 7, 10, 15, 20, 30, 50, 75`. Browse the results in [feature 3884](feature_3884/README.md), organized by group with a 5×4 grid per seed.
 
 Feature 3884 post-activation overlays have dedicated per-group pages, such as [Black men, all 20 seeds](feature_3884/black_man/post_activation_overlays.md). The runnable notebooks and reusable scripts are also included in the public [cos398 `tuning_activations` folder](https://github.com/ele906/cos398/tree/main/tuning_activations) and the [SAE demo notebook repository](https://github.com/ele906/sae-demo-notebooks/tree/main/sae-activation/activation_tuning).
+
+## Additional feature sweeps
+
+These biased-dataset sweeps cover all 12 race/gender groups, 20 seeds per group, and 23 signed alpha values. Each report links the per-group tables, activation graphs, 4×6 seed grids, and post-activation galleries.
+
+- [Feature 3725 report](feature_3725/feature_report.md)
+- [Feature 2486 report](feature_2486/feature_report.md)
+- [Feature 669 report](feature_669/feature_report.md)
+- [Feature 2527 report](feature_2527/feature_report.md)
+- [Feature 433 report](feature_433/feature_report.md)
+- [Feature 3181 report](feature_3181/feature_report.md)
+- [Feature 3611 report](feature_3611/feature_report.md)
+- [Feature 1664 report](feature_1664/feature_report.md)
+- [Feature 546 report](feature_546/feature_report.md)
+- [Feature 3459 report](feature_3459/feature_report.md)
+- [Feature 3722 report](feature_3722/feature_report.md)
+- [Feature 1759 report](feature_1759/feature_report.md)
+- [Feature 1563 report](feature_1563/feature_report.md)
+- [Feature 199 report](feature_199/feature_report.md)
