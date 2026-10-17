@@ -6,7 +6,7 @@ This is a curated set of results from projects in `/n/fs/goose`, including SAE a
 
 The feature intervention work on the original biased race/gender dataset is collected under [`tuning_activations/`](tuning_activations/). See the [feature 138 report](tuning_activations/feature_138/README.md): it replays the original prompts and seeds for the Middle Eastern women group across 19 alpha values. The earlier hand-prompted scarf/no-scarf exploration remains in [`sae_activation_tuning/race_gender_feature_interventions/`](sae_activation_tuning/race_gender_feature_interventions/) as a separate archive.
 
-The next run tests [feature 3884](tuning_activations/feature_3884/README.md) across all 12 biased race/gender groups, with 20 seeds per group. Its report includes a per-group mean pixel-change and activation table for each alpha, plus all per-seed 5×4 image and overlay grids.
+The [feature 3279 sweep](tuning_activations/feature_3279/feature_report.md) tests the strongest one-vs-11 candidate across all 12 biased race/gender groups, with 20 seeds and 23 signed alpha values per group. The completed [feature 452](tuning_activations/feature_452/feature_report.md) and [feature 527](tuning_activations/feature_527/feature_report.md) runs use the same setup and include per-group activation, active-fraction, pixel-MAE, and coefficient tables with all four grid types. The earlier [feature 3884 sweep](tuning_activations/feature_3884/README.md) includes per-alpha tables and 5×4 grids; its post-activation overlays now have dedicated [per-group gallery pages](tuning_activations/feature_3884/black_man/post_activation_overlays.md).
 
 ## Recent experiment
 
