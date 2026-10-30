@@ -58,3 +58,57 @@ mid.0 features and reports the three largest absolute raw-activation differences
 Differences are descriptive associations in prompt-conditioned generated images. They do not
 identify a feature's semantic meaning or establish causation. Feature IDs are SAE-specific
 and should not be compared directly with the down.2.1 dictionary.
+
+## Detailed top-10 view
+
+![Top-10 raw activation, standard deviation, and contrast](detailed_top10/top10_mean_sd_contrast.png)
+
+The large chart adds error bars (the within-group SD of per-image spatial-mean activation) and
+the one-group-versus-other-11 contrast for each of the top ten features. Full values are in
+`detailed_top10/top10_mean_sd_contrast.csv`.
+
+## Average pixel-map overlays
+
+Each grid has six race categories left-to-right, men in the top row and women in the bottom row.
+Every panel overlays a category's average 16×16 activation map (100 images) on its average portrait.
+Color scale is shared across the 12 categories within a feature, but not between features.
+
+### Rank 1: feature 4228 · peak Middle Eastern men
+
+![Feature 4228 average activation overlays](average_pixel_overlays/feature_4228_all_categories.png)
+
+### Rank 2: feature 1650 · peak Black women
+
+![Feature 1650 average activation overlays](average_pixel_overlays/feature_1650_all_categories.png)
+
+### Rank 3: feature 4554 · peak White women
+
+![Feature 4554 average activation overlays](average_pixel_overlays/feature_4554_all_categories.png)
+
+### Rank 4: feature 4586 · peak White women
+
+![Feature 4586 average activation overlays](average_pixel_overlays/feature_4586_all_categories.png)
+
+### Rank 5: feature 5094 · peak White women
+
+![Feature 5094 average activation overlays](average_pixel_overlays/feature_5094_all_categories.png)
+
+### Rank 6: feature 1074 · peak White women
+
+![Feature 1074 average activation overlays](average_pixel_overlays/feature_1074_all_categories.png)
+
+### Rank 7: feature 2023 · peak Middle Eastern men
+
+![Feature 2023 average activation overlays](average_pixel_overlays/feature_2023_all_categories.png)
+
+### Rank 8: feature 4338 · peak White men
+
+![Feature 4338 average activation overlays](average_pixel_overlays/feature_4338_all_categories.png)
+
+### Rank 9: feature 2361 · peak White women
+
+![Feature 2361 average activation overlays](average_pixel_overlays/feature_2361_all_categories.png)
+
+### Rank 10: feature 509 · peak White men
+
+![Feature 509 average activation overlays](average_pixel_overlays/feature_509_all_categories.png)
