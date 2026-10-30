@@ -1,0 +1,28 @@
+{
+  "layer": "unet.mid_block.attentions.0",
+  "checkpoint": "sdxl-unbox/checkpoints/unet.mid_block.attentions.0_k10_hidden5120_auxk256_bs4096_lr0.0001/final",
+  "checkpoint_sha256": "49d38d9178c2a2780e04a5482a2feb9548c6e9a636ed1bf85291acf42e0ffa34",
+  "model": "stabilityai/sdxl-turbo",
+  "vae": "madebyollin/sdxl-vae-fp16-fix",
+  "images": 1200,
+  "groups": [
+    "black man",
+    "east asian man",
+    "hispanic man",
+    "indian man",
+    "middle eastern man",
+    "white man",
+    "black woman",
+    "east asian woman",
+    "hispanic woman",
+    "indian woman",
+    "middle eastern woman",
+    "white woman"
+  ],
+  "seeds": [
+    100,
+    199
+  ],
+  "formula": "(category pixel mean - all-1,200-image pixel mean) / all-1,200-image pixel sample SD",
+  "score": "spatial mean of finite pixelwise Z values; rank only, not a semantic label"
+}
