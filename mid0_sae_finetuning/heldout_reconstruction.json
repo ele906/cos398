@@ -1,0 +1,44 @@
+{
+  "pretrained_test": {
+    "images": 180,
+    "pooled_mse": 4.342211752997504,
+    "macro_category_mse": 4.342211752997505,
+    "per_category_mse": {
+      "black_man": 4.569439849853516,
+      "east asian_man": 4.000203704833984,
+      "hispanic_man": 4.4182707214355466,
+      "indian_man": 4.319894383748372,
+      "middle eastern_man": 4.827673848470052,
+      "white_man": 4.177183303833008,
+      "black_woman": 4.384556147257487,
+      "east asian_woman": 3.9259722391764322,
+      "hispanic_woman": 4.337782338460286,
+      "indian_woman": 4.210983378092448,
+      "middle eastern_woman": 4.814502029418946,
+      "white_woman": 4.120079091389974
+    },
+    "mean_active_features_per_token": 10.0,
+    "dead_feature_fraction": 0.37031251192092896
+  },
+  "fine_tuned_test": {
+    "images": 180,
+    "pooled_mse": 4.122637799580892,
+    "macro_category_mse": 4.122637799580891,
+    "per_category_mse": {
+      "black_man": 4.35703742980957,
+      "east asian_man": 3.8235157267252604,
+      "hispanic_man": 4.226820348103841,
+      "indian_man": 4.0504772694905595,
+      "middle eastern_man": 4.540900573730469,
+      "white_man": 3.9686311594645183,
+      "black_woman": 4.170962498982747,
+      "east asian_woman": 3.7551700337727865,
+      "hispanic_woman": 4.128719991048177,
+      "indian_woman": 3.935452397664388,
+      "middle eastern_woman": 4.529383926391602,
+      "white_woman": 3.984582239786784
+    },
+    "mean_active_features_per_token": 10.0,
+    "dead_feature_fraction": 0.37382814288139343
+  }
+}
