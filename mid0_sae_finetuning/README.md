@@ -22,6 +22,12 @@ targets. We selected the checkpoint with the lowest macro-average validation rec
 MSE across the 12 categories. The best checkpoint was epoch 8 of
 8 (learning rate 1e-06).
 
+## Learning curves
+
+![Training loss and validation reconstruction MSE by epoch](training_curves.png)
+
+The left panel is the SAE optimization objective; the right panel is the macro-average validation reconstruction MSE used to choose the checkpoint. There is no classification accuracy because the SAE is not predicting category labels.
+
 ## Held-out reconstruction result
 
 The evaluation used held-out seeds that were not used to update or select the SAE.
