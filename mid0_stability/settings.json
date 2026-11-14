@@ -1,0 +1,23 @@
+{
+  "layer": "unet.mid_block.attentions.0",
+  "features": [
+    4228,
+    4554,
+    1650,
+    4586,
+    5094,
+    2023,
+    1074,
+    4338,
+    2361,
+    4399
+  ],
+  "mediapipe_version": "0.10.30",
+  "model_sha256": "64184e229b263107bc2b804c6625db1341ff2bb731874b0bcc2fe6544e0bc9ff",
+  "detector": "MediaPipe FaceLandmarker IMAGE, num_faces=1",
+  "min_face_detection_confidence": 0.5,
+  "min_face_presence_confidence": 0.5,
+  "min_tracking_confidence": 0.5,
+  "limit_seeds_per_group": null,
+  "detection_threshold": 0.95
+}
