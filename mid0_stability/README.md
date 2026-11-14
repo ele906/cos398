@@ -12,6 +12,8 @@ The intervention is `h′ = h + (α − 1) zᵢ dᵢ`: α=1 is the no-op, α=0 r
 
 ## Downloads and review
 
+The [context-stability visualization extension](visualizations_v1/README.md) contains **94 figure sets**, each with PNG, PDF, and aggregated CSV: feature × prompt-group heatmaps, sampled crossing brackets, ten per-feature plots, twelve per-category plots, and perturbation-magnitude panels. These use the original **five seeds per group**; counts, pointwise uncertainty intervals, and insufficient-observation flags are included. See [research next steps](RESEARCH_NEXT_STEPS.md) for interpretation and validation priorities.
+
 - [Detection curves](detection_curves.png) and [coefficient associations](coefficient_detection.png).
 - [Detection summary](detection_summary.csv), [sampled boundaries](sampled_boundaries.csv), and [seed-cluster bootstrap intervals](seed_cluster_bootstrap.csv).
 - [Per-image measurements](per_image.csv) and [coefficient bins](coefficient_bins.csv).
