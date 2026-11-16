@@ -1,0 +1,21 @@
+feature,direction,detection_threshold,last_passing_sample_before_first_failure,first_failing_sample,status,nonmonotonic_recovery,interpretation
+1074,positive_amplification,0.95,100.0,,not_reached_in_saved_sweep,False,Observed grid crossing; not an exact or validated quality cliff
+1074,negative_reversal,0.95,-70.0,-100.0,sampled_crossing,False,Observed grid crossing; not an exact or validated quality cliff
+1650,positive_amplification,0.95,100.0,,not_reached_in_saved_sweep,False,Observed grid crossing; not an exact or validated quality cliff
+1650,negative_reversal,0.95,-50.0,-70.0,sampled_crossing,False,Observed grid crossing; not an exact or validated quality cliff
+2023,positive_amplification,0.95,70.0,100.0,sampled_crossing,False,Observed grid crossing; not an exact or validated quality cliff
+2023,negative_reversal,0.95,-50.0,-70.0,sampled_crossing,False,Observed grid crossing; not an exact or validated quality cliff
+2361,positive_amplification,0.95,100.0,,not_reached_in_saved_sweep,False,Observed grid crossing; not an exact or validated quality cliff
+2361,negative_reversal,0.95,-70.0,-100.0,sampled_crossing,False,Observed grid crossing; not an exact or validated quality cliff
+4228,positive_amplification,0.95,50.0,70.0,sampled_crossing,False,Observed grid crossing; not an exact or validated quality cliff
+4228,negative_reversal,0.95,-30.0,-40.0,sampled_crossing,False,Observed grid crossing; not an exact or validated quality cliff
+4338,positive_amplification,0.95,30.0,40.0,sampled_crossing,False,Observed grid crossing; not an exact or validated quality cliff
+4338,negative_reversal,0.95,-40.0,-50.0,sampled_crossing,False,Observed grid crossing; not an exact or validated quality cliff
+4399,positive_amplification,0.95,70.0,100.0,sampled_crossing,False,Observed grid crossing; not an exact or validated quality cliff
+4399,negative_reversal,0.95,-70.0,-100.0,sampled_crossing,False,Observed grid crossing; not an exact or validated quality cliff
+4554,positive_amplification,0.95,100.0,,not_reached_in_saved_sweep,False,Observed grid crossing; not an exact or validated quality cliff
+4554,negative_reversal,0.95,-50.0,-70.0,sampled_crossing,False,Observed grid crossing; not an exact or validated quality cliff
+4586,positive_amplification,0.95,100.0,,not_reached_in_saved_sweep,False,Observed grid crossing; not an exact or validated quality cliff
+4586,negative_reversal,0.95,-70.0,-100.0,sampled_crossing,False,Observed grid crossing; not an exact or validated quality cliff
+5094,positive_amplification,0.95,70.0,100.0,sampled_crossing,False,Observed grid crossing; not an exact or validated quality cliff
+5094,negative_reversal,0.95,-70.0,-100.0,sampled_crossing,False,Observed grid crossing; not an exact or validated quality cliff

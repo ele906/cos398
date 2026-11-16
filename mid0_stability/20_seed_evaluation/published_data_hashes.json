@@ -1,0 +1,9 @@
+{
+  "data/experiment.json": "6dbd83d4486fbbdba1011b3f704cd944d02846dade7dcab96ff7e5753664a3e5",
+  "data/settings.json": "42b0cc16bc285985a9e0bf06ec9220333fefef0ad4cbfd437cc6997d534b3614",
+  "data/source_audit.csv": "bca4240c90cc958e4195622480578bb7c77d97be6475a77dde1959233cb2c162",
+  "data/sampled_boundaries.csv": "ad224f75be1d2b96f0a0b7d50599998c2bba8ea79a5f6ab89b3a3b78cc55f702",
+  "data/coefficient_bins.csv": "aec21a430356f78445c58ee84ad025e45cd5598aacc9b372373e31956ddb38c6",
+  "data/detection_summary.csv": "77ae7eb526b0663b277ec29209d22c3afd11ce10caf8218188aaf268bd85e7ff",
+  "data/per_image.csv": "a4dcac76a502d465b1789305d83bbeecae24160aa5e66ff7474b6dc7038a8f9b"
+}

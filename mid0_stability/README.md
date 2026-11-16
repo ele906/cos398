@@ -12,6 +12,8 @@ The intervention is `h′ = h + (α − 1) zᵢ dᵢ`: α=1 is the no-op, α=0 r
 
 ## Downloads and review
 
+The [20-seed extension](20_seed_evaluation/README.md) evaluates **69,600 conditions** with the same fine-tuned checkpoint, ten features, twelve prompt groups, and 29 multipliers. It includes the complete 94-figure context-stability analysis with PNG/PDF/CSV outputs.
+
 The [context-stability visualization extension](visualizations_v1/README.md) contains **94 figure sets**, each with PNG, PDF, and aggregated CSV: feature × prompt-group heatmaps, sampled crossing brackets, ten per-feature plots, twelve per-category plots, and perturbation-magnitude panels. These use the original **five seeds per group**; counts, pointwise uncertainty intervals, and insufficient-observation flags are included. See [research next steps](RESEARCH_NEXT_STEPS.md) for interpretation and validation priorities.
 
 - [Detection curves](detection_curves.png) and [coefficient associations](coefficient_detection.png).
