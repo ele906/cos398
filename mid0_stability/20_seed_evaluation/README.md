@@ -4,6 +4,10 @@
 
 Only the face-fine-tuned SAE at `unet.mid_block.attentions.0` is used. Checkpoint SHA-256: `cbb3a0a2d0c43c822c7ba97a494de38ae56ea25401a8d31484ffa32e7cc329a6`. The original feature selection and multiplier grid are unchanged. Combining checks seed disjointness, full condition coverage, checkpoint, software versions, generation settings, and detector definitions; no old-environment sweeps are pooled.
 
+## Generated image examples
+
+You are right that the aggregate graphs do not show what the generated faces look like. [Saved-image contact sheets](face_examples/README.md) now show the α=1 reference and neighboring multipliers around representative MediaPipe detection misses. They include 143 examples across feature, prompt group, seed, and intervention direction. The [complete miss counts](face_examples/failure_counts.csv) cover all 877 missed detections among 69,600 conditions. These examples are illustrative rather than a blinded human quality assessment: MediaPipe misses do not prove visible facial distortion.
+
 ## Figures and data
 
 - [All 94 figure sets and methods](figures/README.md), each as PNG, PDF, and aggregated CSV.
