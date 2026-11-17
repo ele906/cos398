@@ -1,0 +1,52 @@
+{
+  "feature": 4228,
+  "layer": "unet.mid_block.attentions.0",
+  "groups": [
+    "black_man",
+    "black_woman",
+    "east_asian_man",
+    "east_asian_woman",
+    "hispanic_man",
+    "hispanic_woman",
+    "indian_man",
+    "indian_woman",
+    "middle_eastern_man",
+    "middle_eastern_woman",
+    "white_man",
+    "white_woman"
+  ],
+  "seeds": [
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49
+  ],
+  "alphas": [
+    -7.0,
+    1.0,
+    7.0
+  ],
+  "n_images": 720,
+  "source_csv": "mid0_stability/combined20_results/per_image.csv (host-side input; not duplicated here)",
+  "source_csv_sha256": "88c00d8eb6cc973f84b4f3c212ec2fb34aa6ab48aa0e84fdc2af431d27c21569",
+  "no_diffusion_generation": true,
+  "beard_class_id": 14,
+  "model": "jseobyun/FaceParsing decoder + official DINOv3 ViT-B/16 LVD-1689M",
+  "all_groups_combined": true
+}
