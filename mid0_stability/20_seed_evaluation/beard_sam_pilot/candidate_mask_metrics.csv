@@ -1,0 +1,13 @@
+input_image_id,category,seed,alpha,prompt_set,crop_width,crop_height,proposal_pixels,proposal_crop_fraction_pct,sam_proposal_score,mask_x0,mask_y0,mask_x1,mask_y1
+indian_man_seed030_alpha_m7,indian_man,30,-7,broad_lower_face,302,260,31692,40.3616912888436,0.955594003200531,0,97,302,259
+indian_man_seed030_alpha_m7,indian_man,30,-7,tight_beard_box,302,260,24015,30.584564442180334,0.9610572457313538,0,147,302,259
+indian_man_seed030_alpha_p1,indian_man,30,1,broad_lower_face,295,259,33788,44.22223676460965,0.9602203369140624,0,103,295,258
+indian_man_seed030_alpha_p1,indian_man,30,1,tight_beard_box,295,259,34179,44.73398337805117,0.9639102220535278,0,117,295,258
+indian_man_seed030_alpha_p7,indian_man,30,7,broad_lower_face,284,251,35544,49.86252174400988,0.9713534712791444,0,65,283,251
+indian_man_seed030_alpha_p7,indian_man,30,7,tight_beard_box,284,251,34260,48.06127602266989,0.969829797744751,0,1,284,251
+middle_eastern_man_seed030_alpha_m7,middle_eastern_man,30,-7,broad_lower_face,379,317,58138,48.39066778755316,0.9575598239898682,0,105,379,316
+middle_eastern_man_seed030_alpha_m7,middle_eastern_man,30,-7,tight_beard_box,379,317,55709,46.36891038179503,0.9692545533180236,0,2,379,316
+middle_eastern_man_seed030_alpha_p1,middle_eastern_man,30,1,broad_lower_face,368,324,61422,51.51469404186796,0.95947265625,1,1,368,323
+middle_eastern_man_seed030_alpha_p1,middle_eastern_man,30,1,tight_beard_box,368,324,31327,26.273986849168008,0.9714222550392152,0,1,368,323
+middle_eastern_man_seed030_alpha_p7,middle_eastern_man,30,7,broad_lower_face,345,314,57145,52.75085387242684,0.9553894996643066,0,1,345,314
+middle_eastern_man_seed030_alpha_p7,middle_eastern_man,30,7,tight_beard_box,345,314,52797,48.73719191359734,0.9567616581916808,0,1,345,314
