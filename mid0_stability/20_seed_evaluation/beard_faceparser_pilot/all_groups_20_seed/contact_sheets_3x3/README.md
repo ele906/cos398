@@ -1,0 +1,18 @@
+# Beard overlays: 3 × 3 pages
+
+Each page shows three seeds (rows) and multipliers **−7, +1, +7** (columns). The last page has two seeds. These are the existing DINOv3-backed FaceParsing class14 overlays, unchanged; no new segmentation or image generation. Original long strips remain in `../contact_sheets/`.
+
+| Prompt group | Pages |
+|---|---|
+| [Black Man](black_man/README.md) | [1](black_man/page_01.png) · [2](black_man/page_02.png) · [3](black_man/page_03.png) · [4](black_man/page_04.png) · [5](black_man/page_05.png) · [6](black_man/page_06.png) · [7](black_man/page_07.png) |
+| [Black Woman](black_woman/README.md) | [1](black_woman/page_01.png) · [2](black_woman/page_02.png) · [3](black_woman/page_03.png) · [4](black_woman/page_04.png) · [5](black_woman/page_05.png) · [6](black_woman/page_06.png) · [7](black_woman/page_07.png) |
+| [East Asian Man](east_asian_man/README.md) | [1](east_asian_man/page_01.png) · [2](east_asian_man/page_02.png) · [3](east_asian_man/page_03.png) · [4](east_asian_man/page_04.png) · [5](east_asian_man/page_05.png) · [6](east_asian_man/page_06.png) · [7](east_asian_man/page_07.png) |
+| [East Asian Woman](east_asian_woman/README.md) | [1](east_asian_woman/page_01.png) · [2](east_asian_woman/page_02.png) · [3](east_asian_woman/page_03.png) · [4](east_asian_woman/page_04.png) · [5](east_asian_woman/page_05.png) · [6](east_asian_woman/page_06.png) · [7](east_asian_woman/page_07.png) |
+| [Hispanic Man](hispanic_man/README.md) | [1](hispanic_man/page_01.png) · [2](hispanic_man/page_02.png) · [3](hispanic_man/page_03.png) · [4](hispanic_man/page_04.png) · [5](hispanic_man/page_05.png) · [6](hispanic_man/page_06.png) · [7](hispanic_man/page_07.png) |
+| [Hispanic Woman](hispanic_woman/README.md) | [1](hispanic_woman/page_01.png) · [2](hispanic_woman/page_02.png) · [3](hispanic_woman/page_03.png) · [4](hispanic_woman/page_04.png) · [5](hispanic_woman/page_05.png) · [6](hispanic_woman/page_06.png) · [7](hispanic_woman/page_07.png) |
+| [Indian Man](indian_man/README.md) | [1](indian_man/page_01.png) · [2](indian_man/page_02.png) · [3](indian_man/page_03.png) · [4](indian_man/page_04.png) · [5](indian_man/page_05.png) · [6](indian_man/page_06.png) · [7](indian_man/page_07.png) |
+| [Indian Woman](indian_woman/README.md) | [1](indian_woman/page_01.png) · [2](indian_woman/page_02.png) · [3](indian_woman/page_03.png) · [4](indian_woman/page_04.png) · [5](indian_woman/page_05.png) · [6](indian_woman/page_06.png) · [7](indian_woman/page_07.png) |
+| [Middle Eastern Man](middle_eastern_man/README.md) | [1](middle_eastern_man/page_01.png) · [2](middle_eastern_man/page_02.png) · [3](middle_eastern_man/page_03.png) · [4](middle_eastern_man/page_04.png) · [5](middle_eastern_man/page_05.png) · [6](middle_eastern_man/page_06.png) · [7](middle_eastern_man/page_07.png) |
+| [Middle Eastern Woman](middle_eastern_woman/README.md) | [1](middle_eastern_woman/page_01.png) · [2](middle_eastern_woman/page_02.png) · [3](middle_eastern_woman/page_03.png) · [4](middle_eastern_woman/page_04.png) · [5](middle_eastern_woman/page_05.png) · [6](middle_eastern_woman/page_06.png) · [7](middle_eastern_woman/page_07.png) |
+| [White Man](white_man/README.md) | [1](white_man/page_01.png) · [2](white_man/page_02.png) · [3](white_man/page_03.png) · [4](white_man/page_04.png) · [5](white_man/page_05.png) · [6](white_man/page_06.png) · [7](white_man/page_07.png) |
+| [White Woman](white_woman/README.md) | [1](white_woman/page_01.png) · [2](white_woman/page_02.png) · [3](white_woman/page_03.png) · [4](white_woman/page_04.png) · [5](white_woman/page_05.png) · [6](white_woman/page_06.png) · [7](white_woman/page_07.png) |

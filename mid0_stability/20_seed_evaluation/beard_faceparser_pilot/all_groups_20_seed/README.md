@@ -1,5 +1,7 @@
 # Beard-class results across all prompt groups
 
+**[Browse the compact 3×3 overlay pages](contact_sheets_3x3/README.md)** — three seeds per image, seven pages per group. [Indian-man gallery](contact_sheets_3x3/indian_man/README.md). Original long strips are preserved.
+
 FaceParsing raw class 14 (listed as Beard in the model README) was evaluated on the existing canonical 512×512 Feature 4228 sweep images: 12 prompt groups × 20 seeds (30–49) × α ∈ {−7, +1, +7} = 720 images. All source conditions and files were checked. No diffusion model was run. The earlier Indian-man and Middle-Eastern-man results are reused from the full-resolution 20-seed analysis, not rerun from the smaller-crop pilot.
 
 ## Mean predicted Beard-class area
