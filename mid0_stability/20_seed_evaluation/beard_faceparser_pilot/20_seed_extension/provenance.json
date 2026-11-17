@@ -1,0 +1,45 @@
+{
+  "feature": 4228,
+  "layer": "unet.mid_block.attentions.0",
+  "groups": [
+    "indian_man",
+    "middle_eastern_man"
+  ],
+  "seeds": [
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49
+  ],
+  "alphas": [
+    -7.0,
+    1.0,
+    7.0
+  ],
+  "n_images": 120,
+  "source_csv": "mid0_stability/combined20_results/per_image.csv (host-side input; not duplicated here)",
+  "source_csv_sha256": "88c00d8eb6cc973f84b4f3c212ec2fb34aa6ab48aa0e84fdc2af431d27c21569",
+  "no_diffusion_generation": true,
+  "beard_class_id": 14,
+  "model": "jseobyun/FaceParsing decoder + official DINOv3 ViT-B/16 LVD-1689M",
+  "outputs_uploaded_without_model_weights": true,
+  "decoder_sha256": "ad5266f61eaf540f120e15c47315bef3e2302c720c1c7135d0a3e9f9de55af39",
+  "dinov3_vitb16_sha256": "73cec8be7427c8655ceced13ce62f6e20a1fa90d1b4d4a550df17a1144081a7c",
+  "faceparser_source_commit": "bb649e99424ea988ca2bec8b5a3c8e8ca33f3f2e"
+}

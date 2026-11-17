@@ -48,3 +48,7 @@ PYTHONNOUSERSITE=1 /n/fs/goose/el8403/conda-envs/goose/bin/python \
 ```
 
 By default, rerun outputs go to `/tmp/faceparser_beard_pilot_rerun`; set `--input-dir` or `--output-dir` to use different locations. The script reads the six saved crops from the neighboring SAM pilot directory and does not call the diffusion model.
+
+## 20-seed extension
+
+The separate [20-seed FaceParsing Beard-class extension](20_seed_extension/README.md) evaluates raw class-14 predictions on the full-resolution saved Feature 4228 sweep images for seeds 30–49. It includes contact sheets, masks, per-image metrics, paired changes, and uncertainty intervals. It does not replace the SAM proposals or validate the parser against ground-truth beard masks.
