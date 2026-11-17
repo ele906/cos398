@@ -20,7 +20,7 @@ You are right that the aggregate graphs do not show what the generated faces loo
 
 The existing `all`, `active`, and `active baseline detected` definitions are preserved. Figures report eligible sample counts, pointwise 95% Wilson intervals, missing cohorts, and the explicit n<5 exploratory flag. Twenty available seeds do not guarantee twenty eligible active-feature samples. Sampled crossing brackets are not continuous threshold estimates.
 
-MediaPipe landmark detection is **not facial quality**. Prompt groups are generation conditions, not measured demographic identities. Human validation remains pending. More seeds improve precision; these descriptive figures do not establish a causal feature–demographic interaction or demographic vulnerability.
+MediaPipe landmark detection is **not facial quality**. Prompt groups are generation conditions, not measured demographic identities. A three-reviewer pilot on 100 selected paired cases is now available in [human-review results](human_review_results/README.md); it is limited and does not validate all 69,600 outcomes. More seeds improve precision; these descriptive figures do not establish a causal feature–prompt interaction or demographic vulnerability. See the [integrated results](../INTEGRATED_RESULTS.md) for the current synthesis.
 
 Original source hashes are retained in figures/audit.json. Published per-image paths are converted to workspace-relative references; published_data_hashes.json records the exported CSV/JSON hashes. Raw images, model weights, and detector caches are not uploaded.
 

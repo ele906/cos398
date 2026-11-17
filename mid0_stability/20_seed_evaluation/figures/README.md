@@ -32,7 +32,7 @@ The original coefficient_bins.csv describes scaled coefficients, not actual pert
 python code/plot_context_stability.py --source data --output figures_v2
 ```
 
-Existing output directories are refused. Existing report files are untouched. Exact multiplier grid: `[-100, -70, -50, -40, -30, -20, -15, -12, -10, -7, -5, -3, -2, -1, 0, 1, 2, 3, 5, 7, 10, 12, 15, 20, 30, 40, 50, 70, 100]`. The source experiment configuration preserves the checkpoint and feature IDs. MediaPipe landmark detection is not facial quality; prompt groups are prompt conditions, not inferred demographic identities. Human validation remains necessary.
+Existing output directories are refused. Existing report files are untouched. Exact multiplier grid: `[-100, -70, -50, -40, -30, -20, -15, -12, -10, -7, -5, -3, -2, -1, 0, 1, 2, 3, 5, 7, 10, 12, 15, 20, 30, 40, 50, 70, 100]`. The source experiment configuration preserves the checkpoint and feature IDs. MediaPipe landmark detection is not facial quality; prompt groups are prompt conditions, not inferred demographic identities. A selected 100-case, three-reviewer human-rating pilot is now available at ../human_review_results/README.md; broader validation remains limited.
 
 ## Gallery
 

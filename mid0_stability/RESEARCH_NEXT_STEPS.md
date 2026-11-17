@@ -1,58 +1,20 @@
-# Interpreting the context-stability extension
+# Current research status and next steps
 
-The main question is whether feature interventions have different detectable-face
-outcomes across prompt contexts at comparable measured perturbation magnitudes.
-The figures are descriptive evidence for this question, not proof of a
-feature-by-context interaction or of demographic vulnerability.
+The previous version of this document described the 20-seed evaluation and human review as future work. Both have since been completed. Use [Integrated results](INTEGRATED_RESULTS.md) as the current project synthesis.
 
-## Why the original 17,400 conditions need cautious interpretation
+## Completed
 
-There are only five distinct noise seeds per prompt group, repeated across ten
-features and 29 multipliers. There are 164 failed landmark detections, and these
-are correlated across the same seed and neighboring interventions. The repeated
-conditions cannot be treated as 17,400 independent demographic observations.
+- Fine-tuned mid.0 SAE evaluation: 10 features × 12 prompt groups × 20 seeds × 29 multipliers (69,600 conditions), with saved detection outcomes, uncertainty intervals, figures, and provenance.
+- Three-reviewer distortion-rating pilot: 100 unique paired cases, 300 judgments, agreement statistics, and a comparison against MediaPipe detection.
+- Feature-4228 beard-class analysis across all 12 prompt groups and two exploratory SAM feasibility studies. The segmentation endpoint has not been validated as ground-truth beard area.
+- Separate exploratory additive, spatial-pattern, and support-expansion analyses. These use distinct designs and should not be pooled with the multiplicative stability sweep.
 
-Among the 120 feature–prompt-group combinations in the initially active,
-baseline-detected cohort, 25 have no eligible original seed and only 42 retain
-all five. An absent active-cohort curve is not evidence of stability: the feature
-was not active in those original samples. The all-sample cohort retains them.
+## Current paper focus
 
-Even five detections in five seeds yield a Wilson lower confidence limit near
-0.566. At the exploratory 0.95 crossing criterion, one failure among five gives
-0.80; one among twenty gives 0.95 and does not cross a strict below-0.95 rule.
-Therefore sampled brackets may move simply because the denominator changes.
-Prioritize complete detection curves, counts, and intervals over one cliff number.
-Do not interpolate a precise threshold between saved multipliers.
+Lead with intervention-strength stability in the fine-tuned mid.0 SAE, using MediaPipe landmark detection as an operational endpoint. Present the human pilot as evidence that landmark detection is not equivalent to perceived facial distortion. Keep the beard and other feature-4228 studies exploratory unless their semantic measurements are validated.
 
-## What the 20-seed extension can resolve
+The data support descriptive differences across sampled features and prompt groups; they do not establish demographic vulnerability, a precise instability threshold, or a causal feature-by-context interaction. Prompt groups are generation conditions. MediaPipe detection is not facial quality.
 
-Keep feature selection, checkpoint, prompts, detector settings, multiplier grid,
-and filtering fixed. Add disjoint seeds 35–49 to the original 30–34; evaluate the
-additional seeds separately before combining same-environment detections.
-This yields 69,600 conditions across twenty seed values. Inspect the new-fifteen
-subset as a check on whether patterns seen in the initial five repeat, before
-emphasizing the pooled estimate. More seeds help precision but do not create
-independent human validation or remove sparse-feature eligibility issues.
+## Next work
 
-## Priorities after the descriptive plots
-
-1. Inspect whether failures recur across seeds or are driven by one sample.
-2. Blindly annotate a stratified subset of detection failures and successes,
-   including near-crossing, extreme-strength, and detector-recovery cases.
-   Distinguish coherent face, visible distortion, plausible pose/occlusion,
-   face replaced by texture/other content, and uncertain. The existing selected
-   review sheets display detection outcomes and are not a blinded evaluation set.
-3. Compare feature and prompt contexts where measured perturbation magnitudes
-   overlap. Median-norm plots are descriptive; they do not accomplish matching or
-   adjust confounding by themselves. Do not extrapolate into unsupported ranges.
-4. Only then consider a regularized predictive model, evaluated by held-out seed
-   clusters shared across all prompt groups and features. With twenty seeds,
-   a large unregularized feature-by-group interaction remains vulnerable to
-   separation, sparse failures, and overfitting. Compare simpler models first;
-   make any modeling choices before examining held-out outcomes.
-
-The paper can focus on context-dependent stability if replicated differences
-remain after these checks. If they disappear after magnitude adjustment or
-human validation, that is an informative limitation of raw multiplier-based
-stability measurements. MediaPipe landmark detection is never itself facial
-quality, and demographic prompt groups are not measured identities.
+No new broad image generation is needed to write the current Results and Limitations sections. Draft those sections from the completed analyses, state the sampling and endpoint limits, and preserve secondary pilots in a clearly labeled exploratory section or appendix. Revisit additional experiments only if the manuscript exposes a specific claim that the current data cannot answer.

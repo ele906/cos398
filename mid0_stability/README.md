@@ -19,7 +19,7 @@ The [context-stability visualization extension](visualizations_v1/README.md) con
 - [Detection curves](detection_curves.png) and [coefficient associations](coefficient_detection.png).
 - [Detection summary](detection_summary.csv), [sampled boundaries](sampled_boundaries.csv), and [seed-cluster bootstrap intervals](seed_cluster_bootstrap.csv).
 - [Per-image measurements](per_image.csv) and [coefficient bins](coefficient_bins.csv).
-- [Human review sheets](review/README.md) and [blank annotation table](human_review.csv). **Human facial-quality labels have not been collected.**
+- [Human review sheets](review/README.md) and [blank annotation table](human_review.csv) belong to the original five-seed report. A separate three-reviewer, 100-case pilot has since been completed for the 20-seed evaluation; see [human-review results](20_seed_evaluation/human_review_results/README.md) and the [integrated results](INTEGRATED_RESULTS.md).
 - [Detector settings](settings.json), [experiment configuration](experiment.json), and [analysis code](code/).
 
 CSV image paths are workspace-relative references to the original local runs; full-resolution generated images, model weights, dependency folders, and detector caches are not included here. Review sheets are included for visual inspection. Code assumes the original workspace layout and cached models; this is a report with supporting source, not a standalone environment.
